@@ -42,6 +42,8 @@ It can be expanded or shrinked only right or bottom direction.
 
 Technically I can make that happen top or left direction as well but it makes window jitter.
 
+This is not movable.
+
 One more thing, When something interrupt the focus of this windows(pressing Windows+R button for examples), Resize frame's function will be broken miserably. So i do have to get rid of that malfunction.
 
 
