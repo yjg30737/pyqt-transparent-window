@@ -20,8 +20,8 @@ if __name__ == "__main__":
     import sys
 
     app = QApplication(sys.argv)
-    capturer = TransparentWindow()
-    capturer.show()
+    window = TransparentWindow()
+    window.show()
     app.exec_()
 ```
 
