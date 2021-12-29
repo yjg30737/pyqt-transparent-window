@@ -115,12 +115,3 @@ class TransparentWindow(QWidget):
         self.__pressed = False
         self.__setWindowAsResizeFrame()
         return super().mouseReleaseEvent(e)
-
-
-if __name__ == "__main__":
-    import sys
-
-    app = QApplication(sys.argv)
-    capturer = TransparentWindow()
-    capturer.show()
-    app.exec_()
