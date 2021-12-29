@@ -2,7 +2,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
-from pyqt_transparent_window.resizeFrame import ResizeFrame
+from pyqt_resize_frame.resizeFrame import ResizeFrame
 
 
 class TransparentWindow(QWidget):
