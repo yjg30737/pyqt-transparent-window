@@ -24,6 +24,7 @@ class TransparentWindow(QWidget):
         self.setFixedSize(200, 200)
 
         self.__resizeFrame = ResizeFrame()
+        self.__resizeFrame.deactivated.connect(self.__resizeStop)
 
     def paintEvent(self, e):
         painter = QPainter(self)
@@ -108,12 +109,31 @@ class TransparentWindow(QWidget):
 
     def mousePressEvent(self, e):
         if e.button() == Qt.LeftButton:
-            self.__pressed = True
-            self.__initResizeFrame()
+            self.__resizeStart()
         return super().mousePressEvent(e)
 
     def mouseReleaseEvent(self, e):
         if e.button() == Qt.LeftButton:
-            self.__pressed = False
-            self.__setWindowAsResizeFrame()
+            self.__resizeEnd()
         return super().mouseReleaseEvent(e)
+
+    def __resizeStart(self):
+        self.__pressed = True
+        self.__initResizeFrame()
+
+    def __resizeEnd(self):
+        self.__pressed = False
+        self.__setWindowAsResizeFrame()
+
+    def __resizeStop(self):
+        self.__pressed = False
+        self.__showResizeFrame()
+
+
+if __name__ == "__main__":
+    import sys
+
+    app = QApplication(sys.argv)
+    capturer = TransparentWindow()
+    capturer.show()
+    app.exec_()
