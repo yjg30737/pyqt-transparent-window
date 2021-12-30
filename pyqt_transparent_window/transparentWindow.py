@@ -109,12 +109,18 @@ class TransparentWindow(QWidget):
 
     def mousePressEvent(self, e):
         if e.button() == Qt.LeftButton:
-            self.__resizeStart()
+            if self.__pressed:
+                pass
+            else:
+                self.__resizeStart()
         return super().mousePressEvent(e)
 
     def mouseReleaseEvent(self, e):
         if e.button() == Qt.LeftButton:
-            self.__resizeEnd()
+            if self.__pressed:
+                self.__resizeEnd()
+            else:
+                pass
         return super().mouseReleaseEvent(e)
 
     def __resizeStart(self):

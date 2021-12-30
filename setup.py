@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='pyqt-transparent-window',
-    version='0.0.3',
+    version='0.0.4',
     author='Jung Gyu Yoon',
     author_email='yjg30737@gmail.com',
     license='MIT',
