@@ -134,12 +134,3 @@ class TransparentWindow(QWidget):
     def __resizeStop(self):
         self.__pressed = False
         self.__showResizeFrame()
-
-
-if __name__ == "__main__":
-    import sys
-
-    app = QApplication(sys.argv)
-    capturer = TransparentWindow()
-    capturer.show()
-    app.exec_()
